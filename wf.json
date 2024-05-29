@@ -1,61 +1,498 @@
 {
-  "last_node_id": 4,
-  "last_link_id": 3,
+  "last_node_id": 43,
+  "last_link_id": 53,
   "nodes": [
     {
-      "id": 1,
-      "type": "MobvoiOpenapiMetaman",
+      "id": 5,
+      "type": "OssUploadAudio",
       "pos": [
-        256,
-        176
+        366,
+        321
       ],
       "size": {
         "0": 315,
-        "1": 148
+        "1": 106
       },
       "flags": {},
-      "order": 0,
+      "order": 15,
       "mode": 0,
+      "inputs": [
+        {
+          "name": "audio",
+          "type": "VHS_AUDIO",
+          "link": 5
+        },
+        {
+          "name": "oss_key",
+          "type": "STRING",
+          "link": 14,
+          "widget": {
+            "name": "oss_key"
+          }
+        },
+        {
+          "name": "oss_secret",
+          "type": "STRING",
+          "link": 15,
+          "widget": {
+            "name": "oss_secret"
+          }
+        },
+        {
+          "name": "bucket_name",
+          "type": "STRING",
+          "link": 19,
+          "widget": {
+            "name": "bucket_name"
+          }
+        }
+      ],
       "outputs": [
         {
           "name": "STRING",
           "type": "STRING",
           "links": [
-            3
+            6
           ],
           "shape": 3,
           "slot_index": 0
         }
       ],
       "properties": {
-        "Node name for S&R": "MobvoiOpenapiMetaman"
+        "Node name for S&R": "OssUploadAudio"
+      },
+      "widgets_values": [
+        "LTAI5tCLrJf4jovumDbSxWoV",
+        "bIqTfezJhGeJJeBQ0lCxuNv6ZXvTF8",
+        "fles"
+      ]
+    },
+    {
+      "id": 9,
+      "type": "LoadImage",
+      "pos": [
+        -75,
+        753
+      ],
+      "size": {
+        "0": 315,
+        "1": 314
+      },
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            7
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "2.webp",
+        "image"
+      ]
+    },
+    {
+      "id": 13,
+      "type": "PrimitiveNode",
+      "pos": [
+        -376,
+        152
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            11,
+            13
+          ],
+          "slot_index": 0,
+          "widget": {
+            "name": "secret"
+          }
+        }
+      ],
+      "title": "mobvoi_secret",
+      "properties": {
+        "Run widget replace on values": false
+      },
+      "widgets_values": [
+        "498EDA176F801CD6C52BA1B24213466B"
+      ]
+    },
+    {
+      "id": 12,
+      "type": "PrimitiveNode",
+      "pos": [
+        -371,
+        32
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            10,
+            12
+          ],
+          "slot_index": 0,
+          "widget": {
+            "name": "appkey"
+          }
+        }
+      ],
+      "title": "mobvoi_appkey",
+      "properties": {
+        "Run widget replace on values": false
+      },
+      "widgets_values": [
+        "08729F3204B2CF104B70EB0587E7AF13"
+      ]
+    },
+    {
+      "id": 16,
+      "type": "PrimitiveNode",
+      "pos": [
+        -380,
+        706
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            19,
+            21
+          ],
+          "slot_index": 0,
+          "widget": {
+            "name": "bucket_name"
+          }
+        }
+      ],
+      "title": "bucket_name",
+      "properties": {
+        "Run widget replace on values": false
+      },
+      "widgets_values": [
+        "fles"
+      ]
+    },
+    {
+      "id": 15,
+      "type": "PrimitiveNode",
+      "pos": [
+        -374,
+        605
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            15,
+            18
+          ],
+          "slot_index": 0,
+          "widget": {
+            "name": "oss_secret"
+          }
+        }
+      ],
+      "title": "oss_secret",
+      "properties": {
+        "Run widget replace on values": false
+      },
+      "widgets_values": [
+        "bIqTfezJhGeJJeBQ0lCxuNv6ZXvTF8"
+      ]
+    },
+    {
+      "id": 14,
+      "type": "PrimitiveNode",
+      "pos": [
+        -376,
+        496
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            14,
+            22
+          ],
+          "slot_index": 0,
+          "widget": {
+            "name": "oss_key"
+          }
+        }
+      ],
+      "title": "oss_key",
+      "properties": {
+        "Run widget replace on values": false
+      },
+      "widgets_values": [
+        "LTAI5tCLrJf4jovumDbSxWoV"
+      ]
+    },
+    {
+      "id": 8,
+      "type": "MobvoiOpenapiMetamanAudio",
+      "pos": [
+        802,
+        182
+      ],
+      "size": {
+        "0": 400,
+        "1": 200
+      },
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "audio_url",
+          "type": "STRING",
+          "link": 6,
+          "widget": {
+            "name": "audio_url"
+          }
+        },
+        {
+          "name": "image_url",
+          "type": "STRING",
+          "link": 8,
+          "widget": {
+            "name": "image_url"
+          }
+        },
+        {
+          "name": "appkey",
+          "type": "STRING",
+          "link": 12,
+          "widget": {
+            "name": "appkey"
+          }
+        },
+        {
+          "name": "secret",
+          "type": "STRING",
+          "link": 13,
+          "widget": {
+            "name": "secret"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            34
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MobvoiOpenapiMetamanAudio"
       },
       "widgets_values": [
         "08729F3204B2CF104B70EB0587E7AF13",
         "498EDA176F801CD6C52BA1B24213466B",
         "http://glj.snrcsoft.com:30002/test.webp",
-        "测试生1成数字人，测试生成数字人1234566"
+        ""
       ]
     },
     {
-      "id": 2,
-      "type": "HtmlViewer",
+      "id": 10,
+      "type": "OssUploadImage",
       "pos": [
-        727,
-        118
+        370,
+        577
       ],
       "size": {
-        "0": 600,
-        "1": 500
+        "0": 315,
+        "1": 106
       },
       "flags": {},
-      "order": 1,
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 7
+        },
+        {
+          "name": "oss_key",
+          "type": "STRING",
+          "link": 22,
+          "widget": {
+            "name": "oss_key"
+          }
+        },
+        {
+          "name": "bucket_name",
+          "type": "STRING",
+          "link": 21,
+          "widget": {
+            "name": "bucket_name"
+          }
+        },
+        {
+          "name": "oss_secret",
+          "type": "STRING",
+          "link": 18,
+          "widget": {
+            "name": "oss_secret"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            8
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "OssUploadImage"
+      },
+      "widgets_values": [
+        "LTAI5tCLrJf4jovumDbSxWoV",
+        "bIqTfezJhGeJJeBQ0lCxuNv6ZXvTF8",
+        "fles"
+      ]
+    },
+    {
+      "id": 7,
+      "type": "MobvoiOpenapiTts",
+      "pos": [
+        -93,
+        300
+      ],
+      "size": {
+        "0": 400,
+        "1": 200
+      },
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "appkey",
+          "type": "STRING",
+          "link": 10,
+          "widget": {
+            "name": "appkey"
+          }
+        },
+        {
+          "name": "secret",
+          "type": "STRING",
+          "link": 11,
+          "widget": {
+            "name": "secret"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "VHS_AUDIO",
+          "type": "VHS_AUDIO",
+          "links": [
+            5
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MobvoiOpenapiTts"
+      },
+      "widgets_values": [
+        "08729F3204B2CF104B70EB0587E7AF13",
+        "498EDA176F801CD6C52BA1B24213466B",
+        "cissy_meet",
+        "测试生成数字人",
+        1
+      ]
+    },
+    {
+      "id": 31,
+      "type": "HtmlViewer",
+      "pos": [
+        1292,
+        173
+      ],
+      "size": [
+        583.2080741221316,
+        685.4363132293091
+      ],
+      "flags": {},
+      "order": 19,
       "mode": 0,
       "inputs": [
         {
           "name": "html",
           "type": "STRING",
-          "link": 3,
+          "link": 34,
           "widget": {
             "name": "html"
           }
@@ -65,29 +502,600 @@
         "Node name for S&R": "HtmlViewer"
       },
       "widgets_values": [
-        "e",
+        "https://mobvoi-digitalhuman-video-public.weta365.com/1795659856343478272.mp4",
         null
+      ]
+    },
+    {
+      "id": 37,
+      "type": "PrimitiveNode",
+      "pos": [
+        -375.2476156796112,
+        1219.4680739118312
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            50
+          ],
+          "slot_index": 0,
+          "widget": {
+            "name": "appkey"
+          }
+        }
+      ],
+      "title": "mobvoi_appkey",
+      "properties": {
+        "Run widget replace on values": false
+      },
+      "widgets_values": [
+        "08729F3204B2CF104B70EB0587E7AF13"
+      ]
+    },
+    {
+      "id": 38,
+      "type": "PrimitiveNode",
+      "pos": [
+        -380.24761567961116,
+        1339.4680739118312
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            51
+          ],
+          "slot_index": 0,
+          "widget": {
+            "name": "secret"
+          }
+        }
+      ],
+      "title": "mobvoi_secret",
+      "properties": {
+        "Run widget replace on values": false
+      },
+      "widgets_values": [
+        "498EDA176F801CD6C52BA1B24213466B"
+      ]
+    },
+    {
+      "id": 39,
+      "type": "PrimitiveNode",
+      "pos": [
+        -380.24761567961116,
+        1683.4680739118312
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            46
+          ],
+          "slot_index": 0,
+          "widget": {
+            "name": "oss_key"
+          }
+        }
+      ],
+      "title": "oss_key",
+      "properties": {
+        "Run widget replace on values": false
+      },
+      "widgets_values": [
+        "LTAI5tCLrJf4jovumDbSxWoV"
+      ]
+    },
+    {
+      "id": 40,
+      "type": "PrimitiveNode",
+      "pos": [
+        -378.24761567961116,
+        1792.4680739118314
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            48
+          ],
+          "slot_index": 0,
+          "widget": {
+            "name": "oss_secret"
+          }
+        }
+      ],
+      "title": "oss_secret",
+      "properties": {
+        "Run widget replace on values": false
+      },
+      "widgets_values": [
+        "bIqTfezJhGeJJeBQ0lCxuNv6ZXvTF8"
+      ]
+    },
+    {
+      "id": 41,
+      "type": "PrimitiveNode",
+      "pos": [
+        -384.24761567961116,
+        1893.4680739118317
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            47
+          ],
+          "slot_index": 0,
+          "widget": {
+            "name": "bucket_name"
+          }
+        }
+      ],
+      "title": "bucket_name",
+      "properties": {
+        "Run widget replace on values": false
+      },
+      "widgets_values": [
+        "fles"
+      ]
+    },
+    {
+      "id": 42,
+      "type": "HtmlViewer",
+      "pos": [
+        1287.7523843203908,
+        1360.4680739118312
+      ],
+      "size": [
+        600,
+        500
+      ],
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "html",
+          "type": "STRING",
+          "link": 53,
+          "widget": {
+            "name": "html"
+          }
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "HtmlViewer"
+      },
+      "widgets_values": [
+        "https://mobvoi-digitalhuman-video-public.weta365.com/1795659856343478272.mp4",
+        null
+      ]
+    },
+    {
+      "id": 43,
+      "type": "MobvoiOpenapiMetamanText",
+      "pos": [
+        704,
+        1407
+      ],
+      "size": [
+        400,
+        200
+      ],
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "appkey",
+          "type": "STRING",
+          "link": 50,
+          "widget": {
+            "name": "appkey"
+          }
+        },
+        {
+          "name": "secret",
+          "type": "STRING",
+          "link": 51,
+          "widget": {
+            "name": "secret"
+          }
+        },
+        {
+          "name": "image_url",
+          "type": "STRING",
+          "link": 52,
+          "widget": {
+            "name": "image_url"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            53
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MobvoiOpenapiMetamanText"
+      },
+      "widgets_values": [
+        "08729F3204B2CF104B70EB0587E7AF13",
+        "498EDA176F801CD6C52BA1B24213466B",
+        "http://glj.snrcsoft.com:30002/test.webp",
+        "测试生成数字人，测试生成数字人1234566"
+      ]
+    },
+    {
+      "id": 36,
+      "type": "OssUploadImage",
+      "pos": [
+        325,
+        1703
+      ],
+      "size": {
+        "0": 315,
+        "1": 106
+      },
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 45
+        },
+        {
+          "name": "oss_key",
+          "type": "STRING",
+          "link": 46,
+          "widget": {
+            "name": "oss_key"
+          }
+        },
+        {
+          "name": "bucket_name",
+          "type": "STRING",
+          "link": 47,
+          "widget": {
+            "name": "bucket_name"
+          }
+        },
+        {
+          "name": "oss_secret",
+          "type": "STRING",
+          "link": 48,
+          "widget": {
+            "name": "oss_secret"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            52
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "OssUploadImage"
+      },
+      "widgets_values": [
+        "LTAI5tCLrJf4jovumDbSxWoV",
+        "bIqTfezJhGeJJeBQ0lCxuNv6ZXvTF8",
+        "fles"
+      ]
+    },
+    {
+      "id": 35,
+      "type": "LoadImage",
+      "pos": [
+        -15,
+        1910
+      ],
+      "size": [
+        315,
+        314.0000534057617
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            45
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "2.webp",
+        "image"
       ]
     }
   ],
   "links": [
     [
-      3,
-      1,
+      5,
+      7,
       0,
+      5,
+      0,
+      "VHS_AUDIO"
+    ],
+    [
+      6,
+      5,
+      0,
+      8,
+      0,
+      "STRING"
+    ],
+    [
+      7,
+      9,
+      0,
+      10,
+      0,
+      "IMAGE"
+    ],
+    [
+      8,
+      10,
+      0,
+      8,
+      1,
+      "STRING"
+    ],
+    [
+      10,
+      12,
+      0,
+      7,
+      0,
+      "STRING"
+    ],
+    [
+      11,
+      13,
+      0,
+      7,
+      1,
+      "STRING"
+    ],
+    [
+      12,
+      12,
+      0,
+      8,
       2,
+      "STRING"
+    ],
+    [
+      13,
+      13,
+      0,
+      8,
+      3,
+      "STRING"
+    ],
+    [
+      14,
+      14,
+      0,
+      5,
+      1,
+      "STRING"
+    ],
+    [
+      15,
+      15,
+      0,
+      5,
+      2,
+      "STRING"
+    ],
+    [
+      18,
+      15,
+      0,
+      10,
+      3,
+      "STRING"
+    ],
+    [
+      19,
+      16,
+      0,
+      5,
+      3,
+      "STRING"
+    ],
+    [
+      21,
+      16,
+      0,
+      10,
+      2,
+      "STRING"
+    ],
+    [
+      22,
+      14,
+      0,
+      10,
+      1,
+      "STRING"
+    ],
+    [
+      34,
+      8,
+      0,
+      31,
+      0,
+      "STRING"
+    ],
+    [
+      45,
+      35,
+      0,
+      36,
+      0,
+      "IMAGE"
+    ],
+    [
+      46,
+      39,
+      0,
+      36,
+      1,
+      "STRING"
+    ],
+    [
+      47,
+      41,
+      0,
+      36,
+      2,
+      "STRING"
+    ],
+    [
+      48,
+      40,
+      0,
+      36,
+      3,
+      "STRING"
+    ],
+    [
+      50,
+      37,
+      0,
+      43,
+      0,
+      "STRING"
+    ],
+    [
+      51,
+      38,
+      0,
+      43,
+      1,
+      "STRING"
+    ],
+    [
+      52,
+      36,
+      0,
+      43,
+      2,
+      "STRING"
+    ],
+    [
+      53,
+      43,
+      0,
+      42,
       0,
       "STRING"
     ]
   ],
-  "groups": [],
+  "groups": [
+    {
+      "title": "Generate From Audio",
+      "bounding": [
+        -390,
+        -42,
+        2275,
+        1119
+      ],
+      "color": "#3f789e",
+      "font_size": 24
+    },
+    {
+      "title": "Generate From Text",
+      "bounding": [
+        -394,
+        1145,
+        2292,
+        1119
+      ],
+      "color": "#3f789e",
+      "font_size": 24
+    }
+  ],
   "config": {},
   "extra": {
     "ds": {
-      "scale": 1,
+      "scale": 0.513158118230707,
       "offset": {
-        "0": -109.60000610351562,
-        "1": -22.39997100830078
+        "0": 508.9817853136128,
+        "1": -271.78275362606155
       }
     }
   },

@@ -6,17 +6,39 @@ class Visualizer {
 
         this.iframe = document.createElement('iframe')
         Object.assign(this.iframe, {
-            scrolling: "no",
-            overflow: "hidden",
+            scrolling: "scroll",
+            overflow: "hidden"
         })
         this.iframe.src = "/extensions/ComfyUI-mobvoi-openapi/html/" + visualSrc + ".html"
+        this.container=container;
         container.appendChild(this.iframe)
     }
 
     updateVisual(params) {
+        var that=this;
         const iframeDocument = this.iframe.contentWindow.document
         const container = iframeDocument.getElementById('container')
-        container.innerHTML=params.html;
+
+        if(container){
+            if(params&&params.html)
+                container.innerHTML=params.html;
+            else if(params&&params.indexOf('http')>=0){
+                container.innerHTML='<video src="'+params+'" />';
+            }else{
+                container.innerHTML='<div style="width:600px;height:500px;"></div>';
+            }
+            
+            var video = iframeDocument.querySelector("video");
+
+            if(video){
+                video.addEventListener("loadedmetadata", (event) => {
+                    //that.iframe.style.width=event.target.videoWidth+'px';
+                    //that.iframe.style.height=event.target.videoHeight+'px';
+                    //that.container.style.width=event.target.videoWidth+'px';
+                    //that.container.style.height=event.target.videoHeight+'px';
+                });
+            }
+        }
     }
 
     remove() {
@@ -100,7 +122,7 @@ function createVisualizer(node, inputName, typeName, inputData, app) {
         if (h <= 500) h = 500
 
         if (w > 600) {
-            h = w - 100
+            //h = w - 100
         }
 
         this.size = [w, h]
